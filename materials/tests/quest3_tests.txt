@@ -1,0 +1,39 @@
+# Manual tests for Quest 3 (encrypt .c and clear .h in src/ai_modules)
+#
+# Setup: create src/ai_modules with files:
+#   m1.c   -> contains some ASCII text (e.g. "int main(){return 0;}\n")
+#   m1.h   -> contains some header text
+#   m2.c   -> contains "printf(\"Hello\\n\");\n"
+#   m2.h   -> contains some header text
+#
+# Test 1: basic encryption with shift 1
+Input:
+3
+1
+-1
+
+Expected behavior:
+- All .c files in src/ai_modules are overwritten with Caesar-shifted content (printable ASCII 32..126 shifted by +1).
+- All .h files are truncated to empty.
+- Program prints only a newline after successful operation (no extra text).
+- No changes outside src/ai_modules.
+
+# Test 2: invalid directory (simulate by renaming src/ai_modules)
+Input:
+3
+5
+-1
+
+Expected stdout:
+n/a
+
+# Test 3: early exit with -1 as shift
+Input:
+3
+-1
+
+Expected: program exits immediately (no output).
+
+# Notes:
+- For verification, inspect files in src/ai_modules after running.
+- The cipher shifts only printable ASCII characters in the range 32..126 and wraps inside that range.

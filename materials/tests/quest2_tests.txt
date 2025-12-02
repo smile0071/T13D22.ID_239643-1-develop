@@ -1,0 +1,40 @@
+# Ручные тесты для Quest 2 (описание ввод -> ожидаемый вывод)
+
+# Тест 1: файл существует и содержит "I_love\n"
+Input:
+1
+test.txt
+2
+Bek the great
+-1
+
+Expected stdout:
+I_love
+
+I_love
+Bek the great
+
+File final content: "I_love\n" (unchanged first line) then "Bek the great\n"
+
+# Тест 2: команда 2 без предыдущего загрузки
+Input:
+2
+Bek the great
+-1
+
+Expected stdout:
+n/a
+
+# Тест 3: загрузка несуществующего файла, затем попытка записи
+Input:
+1
+doesnt_exist.txt
+2
+Wow
+-1
+
+Expected stdout:
+n/a
+n/a
+
+# Примечание: проверки делаются вручную, подавая строки в stdin и сравнивая stdout и содержимое файла.
