@@ -1,0 +1,14 @@
+[INFO] 2025-12-02 16:14:11 Opened file: text.txt
+[INFO] 2025-12-02 16:14:24 Wrote line to file: text.txt
+[INFO] 2025-12-02 16:14:30 Starting Caesar encryption with shift=1
+[INFO] 2025-12-02 16:14:30 Encrypted .c file (Caesar): ../src/ai_modules/m1.c
+[INFO] 2025-12-02 16:14:30 Truncated header: ../src/ai_modules/m1.h
+[INFO] 2025-12-02 16:14:30 Encrypted .c file (Caesar): ../src/ai_modules/m2.c
+[INFO] 2025-12-02 16:14:30 Truncated header: ../src/ai_modules/m2.h
+[INFO] 2025-12-02 16:14:30 Completed Caesar encryption
+[INFO] 2025-12-02 16:14:38 Starting Caesar encryption with shift=1
+[INFO] 2025-12-02 16:14:38 Encrypted .c file (Caesar): ../src/ai_modules/m1.c
+[INFO] 2025-12-02 16:14:38 Truncated header: ../src/ai_modules/m1.h
+[INFO] 2025-12-02 16:14:38 Encrypted .c file (Caesar): ../src/ai_modules/m2.c
+[INFO] 2025-12-02 16:14:38 Truncated header: ../src/ai_modules/m2.h
+[INFO] 2025-12-02 16:14:38 Completed Caesar encryption

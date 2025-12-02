@@ -1,29 +1,22 @@
 #include "logger.h"
-#include <time.h>
-#include <string.h>
+
 #include <stdlib.h>
+#include <string.h>
+#include <time.h>
 
-static const char *level_names[] = {
-    "DEBUG",
-    "TRACE",
-    "INFO",
-    "WARNING",
-    "ERROR"
-};
+static const char* level_names[] = {"DEBUG", "TRACE", "INFO", "WARNING", "ERROR"};
 
-FILE* log_init(char *filename)
-{
+FILE* log_init(char* filename) {
     if (!filename) return NULL;
     /* open in "w" mode to truncate existing log on start */
-    FILE *f = fopen(filename, "w");
+    FILE* f = fopen(filename, "w");
     return f;
 }
 
-int logcat(FILE* log_file, char *message, enum log_level level)
-{
+int logcat(FILE* log_file, char* message, enum log_level level) {
     if (!log_file || !message) return -1;
-    const char *lname = "UNKNOWN";
-    if ((int)level >= 0 && (int)level < (int)(sizeof(level_names)/sizeof(level_names[0]))) {
+    const char* lname = "UNKNOWN";
+    if ((int)level >= 0 && (int)level < (int)(sizeof(level_names) / sizeof(level_names[0]))) {
         lname = level_names[level];
     }
     time_t t = time(NULL);
@@ -42,8 +35,7 @@ int logcat(FILE* log_file, char *message, enum log_level level)
     return 0;
 }
 
-int log_close(FILE* log_file)
-{
+int log_close(FILE* log_file) {
     if (!log_file) return -1;
     if (fclose(log_file) != 0) return -1;
     return 0;
